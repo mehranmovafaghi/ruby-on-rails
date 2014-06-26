@@ -1,0 +1,20 @@
+<h1>My Music Collection</h1>
+
+<h2>
+<%= link_to "add new Track", new_album_path %>
+</h2><hr />
+<% @albums.each do |alb| %>
+<p>
+<%= link_to 'Edit', {:action => "edit", :id => alb.id} %>
+<%= link_to "delete", alb, :method => :delete, :confirm => "You sure?", :title => "Delete #{alb.id}" %>
+<%= link_to 'Destroy', method: :delete  %>
+
+<%= link_to "Delete!", alb, :method => :delete %>
+
+</p><h2>
+<%= link_to alb.title, alb %> | <%= alb.created_at %>
+</h2>
+
+<hr />
+<% end %>
+

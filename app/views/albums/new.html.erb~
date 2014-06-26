@@ -1,0 +1,11 @@
+<h1>Add new Track</h1>
+<%= form_for @album do |a| %>
+<p>
+<%= a.lable :title %>
+<%= a.text_field :title %>
+</p>
+<p>
+</p>
+<%= a.submit "Create" %>
+
+<% end %>
