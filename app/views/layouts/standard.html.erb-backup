@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<%= javascript_include_tag :defaults %>
+<%= csrf_meta_tag %>
+<meta http-equiv="Content-Type" content="text/html" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<title>Mehran Sound Manager</title>
+<%= stylesheet_link_tag "style" %>
+<%= stylesheet_link_tag "style2" %>
+<style type="text/css">
+
+/* Landscape phones and down */
+@media (max-width: 480px) 
+{
+div#contentt {
+   margin: 10px auto 10px auto; 
+   border:1px solid #000; 
+   height:300px; 
+   width:98%;
+   background-color:#ffeded;
+   overflow-y:scroll; 
+   font-size:80%;
+   padding:6px;
+}
+}
+
+* {margin: 0; padding: 0;}
+hr{margin:8px; border:1px solid #000;}
+#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+#sortable li span { position: absolute; margin-left: -1.3em; }
+#sortable li a { color: #ff0000; }
+#sortable li a:hover { color: #ed0000; font-weight: bold; }
+
+/* Sortable tables */
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
+table.sortable {
+   font-size:14px;
+}
+table.sortable td {
+   margin: 2px 10px 2px 10px;
+   padding: 4px;
+}
+</style>
+<script>
+$(function() {
+$( "#sortable" ).sortable();
+$( "#sortable" ).disableSelection();
+});
+</script>
+</head>
+<body>
+<div id="header"  style="font-family: Denk One">
+Mehran Sound Manager22<br />powered by Ruby on Rails
+</div>
+<div id="contentt">
+<%= yield -%>
+</div>
+<div id="sidebar"></div>
+<footer>All right reserved &copy mehran.movafaghi</footer>
+</body>
+</html>

@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-#root 'albums#list'
-resources :albums
+#  resources :albums do
+    resources :albums
+#  end
+root 'albums#index'
+#resources :albums
+#map.resouces :albums
 #root :to => "albums#list", :id => '1'
 
   # Example of regular route:

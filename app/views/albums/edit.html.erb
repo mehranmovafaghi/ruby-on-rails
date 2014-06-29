@@ -1,14 +1,10 @@
 <h1>Edit Book Detail</h1>
 
-<%= form_for album.edit do |a| %>
+<%= form_for @album do |f| %>
 <p>
-<%= a.label :title %>
-<%= a.text_field :title %>
+<%= f.label :title %>
+<%= f.text_field :title %>
 </p>
-<p>
-</p>
-<%= a.submit "update" %>
-
+<%= f.submit "Edit" %>
 <% end %>
-
 <h1><%= link_to "Back", albums_path %></h1>

@@ -1,18 +1,13 @@
-<h1>My Music Collection</h1>
-
-<h2>
-<%= link_to "add new Track", new_album_path %>
-</h2><hr />
-<% @albums.each do |alb| %>
-<p>
-<%= link_to 'Edit', {:action => "edit", :id => alb.id} %>
-
-<%= link_to 'Destroy', alb, :confirm => 'Are you sure?', :method => :delete %>
-
-</p><h2>
-<%= link_to alb.title, alb %> | <%= alb.created_at %>
-</h2>
-
+<h1>My Music Collection | <small><%= link_to "Add new Track", new_album_path %></small></h1>
+<p></p>
 <hr />
+<table class="sortable">
+<thead>
+  <tr><th>Track Number</th><th>Date</th><th colspan=2>Command</th></tr>
+</thead>
+<tbody>
+<% @albums.each do |alb| %>
+  <tr><td><%= link_to alb.title, alb %></td><td><%= alb.created_at %></td><td><%= link_to 'Edit', edit_album_path(alb.id) %></td><td><%= button_to 'Destroy', album_path(alb), :method => :delete %></td></tr>
 <% end %>
-
+</tbody>
+</table>

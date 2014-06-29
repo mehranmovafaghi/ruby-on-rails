@@ -1,20 +1,32 @@
-<h1>My Music Collection</h1>
+<h1>My Music Collection | <small><%= link_to "Add new Track", new_album_path %></small></h1>
+<p></p>
+<hr />
+<!--
+<ul id="sortable">
+<% @albums.each do |alb| %>
+<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+<%= link_to alb.title, alb %> | <%= alb.created_at %> | <%= link_to 'Edit', edit_album_path(alb.id) %>
 
 <h2>
-<%= link_to "add new Track", new_album_path %>
-</h2><hr />
-<% @albums.each do |alb| %>
-<p>
-<%= link_to 'Edit', {:action => "edit", :id => alb.id} %>
-<%= link_to "delete", alb, :method => :delete, :confirm => "You sure?", :title => "Delete #{alb.id}" %>
-<%= link_to 'Destroy', method: :delete  %>
-
-<%= link_to "Delete!", alb, :method => :delete %>
-
-</p><h2>
 <%= link_to alb.title, alb %> | <%= alb.created_at %>
 </h2>
+<div style="text-allign: left; padding:4px;">
+<span style="float:left; font-size:16px;"><%= link_to 'Edit', edit_album_path(alb.id) %>&nbsp</span><span style="float:left font-size:14px;"> <%= button_to 'Destroy', album_path(alb), :method => :delete %></span>
+<hr style="clear: both;" />
+<br />
+</div>
 
-<hr />
+</li>
 <% end %>
+</ul>-->
 
+<table class="sortable">
+<thead>
+  <tr><th>Track Number</th><th>Date</th><th colspan=2>Command</th></tr>
+</thead>
+<tbody>
+<% @albums.each do |alb| %>
+  <tr><td><%= link_to alb.title, alb %></td><td><%= alb.created_at %></td><td><%= link_to 'Edit', edit_album_path(alb.id) %></td><td><%= button_to 'Destroy', album_path(alb), :method => :delete %></td></tr>
+<% end %>
+</tbody>
+</table>

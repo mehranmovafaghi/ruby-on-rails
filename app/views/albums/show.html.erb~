@@ -1,5 +1,4 @@
 
-<h1><%= @albums.title %></h1>
-<p><%= @albums.created_at %></p>
+
 
 <h1><%= link_to "Back", albums_path %></h1>

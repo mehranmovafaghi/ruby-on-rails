@@ -23,27 +23,26 @@ layout 'standard'
     end
   end
 
-  private
-
-    def album_params
-      params.require(:album).permit(:title)
-    end
-
    def edit
 @album = Album.find(params[:id])
    end
 
    def update
-@album = Album.find(params[:id])
-if @album .update_attributes(params[:id])
-end
+     @album = Album.find(params[:id])
+     @album.update_attributes(album_params)
+     #if @album.update_attributes(params[:id])
+     #   redirect_to album_path
+     #else
+     #   render 'edit'
+     #end
    end
 
   def destroy
-#@album = Album.find(params[:id]).destroy
-@album = Album.find(album_params).destroy
-  redirect_to album_path
+    @album = Album.find(params[:id]).destroy
+#    @album.destroy
+    redirect_to 'http://0.0.0.0:3000/albums'
   end
+
   private
 
     def album_params

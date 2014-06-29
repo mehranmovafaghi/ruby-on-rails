@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'DenkOne';
+  font-style: normal;
+  font-weight: 400;
+  src: local('DenkOne'), local('DenkOne-Regular'), url(ahLepySZXU_KFQaVZ6XDvPesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
 body {
    font-family: Helvetica, Geneva, Arial, sans-serif;
    font-size: small;
@@ -17,9 +23,54 @@ div#container {
    width: 760px;
    margin: 0 auto;
 }
+div#contentt {
+   margin: 10px auto 10px auto; 
+   border:2px solid #000; 
+   height:300px; 
+   width:90%; 
+   min-width:500px; 
+   overflow-y:scroll; 
+   font-size:80%;
+   padding:8px;
+}
+div#contentt table {
+text-align: right;   
+font-size:20px;
+}
 div#header {
+   min-width:490px;
+   border-bottom: 1px solid #ddd; 
    text-align: center;
    padding-bottom: 15px;
+   font-size: 220%;
+   font-family: DenkOne;
+   height:150px;
+   width:100%;
+background: -moz-linear-gradient(top, rgba(63,46,247,0.65) 0%, rgba(0,0,0,0) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(63,46,247,0.65)), color-stop(100%,rgba(0,0,0,0)));
+background: -webkit-linear-gradient(top, rgba(63,46,247,0.65) 0%,rgba(0,0,0,0) 100%);
+background: -o-linear-gradient(top, rgba(63,46,247,0.65) 0%,rgba(0,0,0,0) 100%);
+background: -ms-linear-gradient(top, rgba(63,46,247,0.65) 0%,rgba(0,0,0,0) 100%);
+background: linear-gradient(to bottom, rgba(63,46,247,0.65) 0%,rgba(0,0,0,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a63f2ef7', endColorstr='#00000000',GradientType=0 );
+}
+div#header img.logo {
+   border:2px solid #ddd;
+   margin:20px;
+   width:100px;
+   height:100px;
+   float:left;
+   background-color:#fff;
+}
+footer {
+  padding: 10px 15px;
+  background-color: #bcbcbc;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  text-align:center;
+  font-weight: bold;
+width:100%;
 }
 div#content {
    float: left;
